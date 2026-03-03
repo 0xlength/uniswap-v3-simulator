@@ -104,6 +104,10 @@ export class ConfigurableCorePool implements IConfigurableCorePool, Visitable {
     }
   }
 
+  setCoreGlobalState(sqrtPriceX96: JSBI, liquidity: JSBI, tickCurrent: number) {
+    this.corePool.setCoreGlobalState(sqrtPriceX96, liquidity, tickCurrent);
+  }
+
   rapidMint(
     tickLower: number,
     tickUpper: number,

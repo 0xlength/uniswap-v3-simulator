@@ -177,7 +177,7 @@ export class TickManager {
   }
 
   private isBelowSmallest(sortedTicks: readonly Tick[], tick: number): boolean {
-    assert(sortedTicks.length > 0, "LENGTH");
+    if (sortedTicks.length === 0) return true;
     return tick < sortedTicks[0].tickIndex;
   }
 
@@ -185,7 +185,7 @@ export class TickManager {
     sortedTicks: readonly Tick[],
     tick: number
   ): boolean {
-    assert(sortedTicks.length > 0, "LENGTH");
+    if (sortedTicks.length === 0) return true;
     return tick >= sortedTicks[sortedTicks.length - 1].tickIndex;
   }
 

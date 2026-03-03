@@ -111,6 +111,19 @@ export class CorePool {
     this._sqrtPriceX96 = sqrtPriceX96;
   }
 
+  /**
+   * Set the core global state of the pool
+   * This is used to set the core global state of the pool when we want to set the core global state of the pool without replaying the events. e.g. arbitrage.
+   * @param sqrtPriceX96 - The new sqrt price of the pool
+   * @param liquidity - The new liquidity of the pool
+   * @param tickCurrent - The new current tick of the pool
+   */
+  setCoreGlobalState(sqrtPriceX96: JSBI, liquidity: JSBI, tickCurrent: number) {
+    this._sqrtPriceX96 = sqrtPriceX96;
+    this._liquidity = liquidity;
+    this._tickCurrent = tickCurrent;
+  }
+
   phantomMint(
     recipient: string,
     tickLower: number,

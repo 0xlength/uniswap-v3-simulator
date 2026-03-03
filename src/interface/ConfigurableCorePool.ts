@@ -13,6 +13,12 @@ export interface ConfigurableCorePool {
 
   initialize(sqrtPriceX96: JSBI): Promise<void>;
 
+  setCoreGlobalState(
+    sqrtPriceX96: JSBI,
+    liquidity: JSBI,
+    tickCurrent: number
+  ): void;
+
   rapidMint(
     tickLower: number,
     tickUpper: number,
